@@ -1,4 +1,27 @@
+# == Route Map
+#
+#                   Prefix Verb   URI Pattern                    Controller#Action
+#         new_user_session GET    /users/sign_in(.:format)       devise/sessions#new
+#             user_session POST   /users/sign_in(.:format)       devise/sessions#create
+#     destroy_user_session DELETE /users/sign_out(.:format)      devise/sessions#destroy
+#            user_password POST   /users/password(.:format)      devise/passwords#create
+#        new_user_password GET    /users/password/new(.:format)  devise/passwords#new
+#       edit_user_password GET    /users/password/edit(.:format) devise/passwords#edit
+#                          PATCH  /users/password(.:format)      devise/passwords#update
+#                          PUT    /users/password(.:format)      devise/passwords#update
+# cancel_user_registration GET    /users/cancel(.:format)        devise/registrations#cancel
+#        user_registration POST   /users(.:format)               devise/registrations#create
+#    new_user_registration GET    /users/sign_up(.:format)       devise/registrations#new
+#   edit_user_registration GET    /users/edit(.:format)          devise/registrations#edit
+#                          PATCH  /users(.:format)               devise/registrations#update
+#                          PUT    /users(.:format)               devise/registrations#update
+#                          DELETE /users(.:format)               devise/registrations#destroy
+#               home_index GET    /home/index(.:format)          home#index
+#                     root GET    /                              home#index
+# 
+
 Rails.application.routes.draw do
+  devise_for :users
   get 'home/index'
   root 'home#index'
   # The priority is based upon order of creation: first created -> highest priority.
@@ -56,3 +79,14 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 end
+
+<li>
+  <a href="#Contact">Contact</a>
+</li>
+
+<% if user_signed_in? %>
+  <li><a href="/users/sign_out">Log Out</a></li>
+  <li><a href="/users/edit">My Account</a></li>
+
+<% else %>
+  <li><a href="/users/sign_up">Sign Up</a></li>
