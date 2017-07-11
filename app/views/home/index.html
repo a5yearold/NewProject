@@ -33,16 +33,19 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="/users/sign_in">Login</a>
-                    </li>
-                    <li>
-                        <a href="/users/sign_up">Sign up</a>
-                    </li>
-                    <li>
-                        <a href="#contact">Contact</a>
-                    </li>
-                </ul>
+                        <li>
+  <a href="#Contact">Contact</a>
+</li>
+
+<% if user_signed_in? %>
+  <li><a href="/users/sign_out" data-method='delete'>Log Out</a></li>
+  <li><a href="/users/edit">My Account</a></li>
+
+<% else %>
+  <li><a href="/users/sign_up">Sign Up</a></li>
+  <li><a href="/users/sign_in">Login</a></li>
+<% end %>
+  </ul>
             </div>
             <!-- /.navbar-collapse -->
         </div>
@@ -208,6 +211,7 @@
             </div>
         </div>
     </footer>
+    
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>

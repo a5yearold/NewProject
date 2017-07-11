@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   devise_for :users
   get 'home/index'
   root 'home#index'
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -80,13 +81,3 @@ Rails.application.routes.draw do
   #   end
 end
 
-<li>
-  <a href="#Contact">Contact</a>
-</li>
-
-<% if user_signed_in? %>
-  <li><a href="/users/sign_out">Log Out</a></li>
-  <li><a href="/users/edit">My Account</a></li>
-
-<% else %>
-  <li><a href="/users/sign_up">Sign Up</a></li>
