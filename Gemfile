@@ -10,6 +10,9 @@ end
 gem 'rails', '~> 5.1.2'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
+# carrierwave to add avatars
+gem 'carrierwave', '~> 1.0'
+gem "mini_magick"
 
 gem 'pg', '~> 0.20.0'
 # Use Puma as the app server
