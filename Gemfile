@@ -12,7 +12,10 @@ gem 'rails', '~> 5.1.2'
 gem 'sqlite3'
 # carrierwave to add avatars
 gem 'carrierwave', '~> 1.0'
+# used in conjunction with carrierwave to compress image files
 gem "mini_magick"
+# support AWS S3 storage for this project
+gem "fog-aws"
 
 gem 'pg', '~> 0.20.0'
 # Use Puma as the app server
